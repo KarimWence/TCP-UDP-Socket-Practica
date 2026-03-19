@@ -4,7 +4,7 @@ const url = require("url");
 
 const udpClient = dgram.createSocket("udp4");
 
-const SERVER_IP = "127.0.0.1";
+const SERVER_IP = "100.110.207.26";
 const SERVER_PORT = 41234;
 
 http
@@ -29,6 +29,6 @@ http
       res.end("Not found");
     }
   })
-  .listen(3000, () => {
-    console.log("Bridge en http://localhost:3000");
+  .listen(3000, "0.0.0.0", () => {
+    console.log("Bridge listo en red");
   });

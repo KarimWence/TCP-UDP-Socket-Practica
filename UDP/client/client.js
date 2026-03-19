@@ -1,7 +1,7 @@
 const dgram = require("dgram");
 const client = dgram.createSocket("udp4");
 
-const SERVER_IP = "127.0.0.1";
+const SERVER_IP = "100.110.207.26";
 const SERVER_PORT = 41234;
 
 const mensajeTexto = process.argv[2] || "Hola servidor UDP!";
