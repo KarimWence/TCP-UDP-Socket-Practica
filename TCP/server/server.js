@@ -13,7 +13,6 @@ const server = net.createServer((socket) => {
 
         console.log('Mensaje recibido:', message);
 
-        // Enviar a todos los clientes excepto el emisor
         clients.forEach((client) => {
             if (client !== socket) {
                 client.write(message + '\n');
@@ -39,7 +38,6 @@ const server = net.createServer((socket) => {
     });
 });
 
-// IMPORTANTE: permitir conexiones externas
 server.listen(PORT, '0.0.0.0', () => {
     console.log(`Servidor escuchando en puerto ${PORT}`);
 });
