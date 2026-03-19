@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Cliente UDP</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Cliente UDP</h1>
+
+        <input type="text" id="mensaje" placeholder="Escribe un mensaje">
+        <button onclick="enviar()">Enviar</button>
+
+        <p id="estado"></p>
+    </div>
+
+    <script>
+        function enviar() {
+            const mensaje = document.getElementById('mensaje').value;
+
+
+            fetch(`http://localhost:3000/enviar?msg=${encodeURIComponent(mensaje)}`)
+                .then(res => res.text())
+                .then(data => {
+                    document.getElementById('estado').innerText = data;
+                })
+                .catch(() => {
+                    document.getElementById('estado').innerText = "Error al enviar";
+                });
+        }
+    </script>
+
+</body>
+
+</html>
