@@ -29,6 +29,6 @@ http
       res.end("Not found");
     }
   })
-  .listen(3000, "0.0.0.0", () => {
+  .listen(3000, "100.105.233.92", () => {
     console.log("Bridge listo en red");
   });

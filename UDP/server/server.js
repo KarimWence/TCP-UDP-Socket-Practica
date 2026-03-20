@@ -5,6 +5,13 @@ const servidor = dgram.createSocket("udp4");
 const PUERTO = 41234;
 
 servidor.on("message", (msg, rinfo) => {
+  const perder = Math.random() < 0.3;
+
+  if (perder) {
+    console.log("⚠️ Paquete PERDIDO");
+    return;
+  }
+
   console.log(`Mensaje recibido: ${msg}`);
   console.log(`De: ${rinfo.address}:${rinfo.port}`);
 

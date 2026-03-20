@@ -23,7 +23,7 @@
             const mensaje = document.getElementById('mensaje').value;
 
 
-            fetch(`http://localhost:3000/enviar?msg=${encodeURIComponent(mensaje)}`)
+            fetch(`http://100.105.233.92:3000/enviar?msg=${encodeURIComponent(mensaje)}`)
                 .then(res => res.text())
                 .then(data => {
                     document.getElementById('estado').innerText = data;
